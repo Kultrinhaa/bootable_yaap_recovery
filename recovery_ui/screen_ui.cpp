@@ -1202,13 +1202,8 @@ bool ScreenRecoveryUI::Init(const std::string& locale) {
 
   back_icon_ = LoadBitmap("ic_back");
   back_icon_sel_ = LoadBitmap("ic_back_sel");
-  if (android::base::GetBoolProperty("ro.boot.dynamic_partitions", false) ||
-      android::base::GetBoolProperty("ro.fastbootd.available", false)) {
-    yaap_logo_ = LoadBitmap("logo_image_switch");
-    fastbootd_logo_ = LoadBitmap("fastbootd");
-  } else {
-    yaap_logo_ = LoadBitmap("logo_image");
-  }
+  yaap_logo_ = LoadBitmap("logo_image");
+  fastbootd_logo_ = LoadBitmap("fastbootd");
 
   // Background text for "installing_update" could be "installing update" or
   // "installing security update". It will be set after Init() according to the commands in BCB.
